@@ -4,9 +4,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: beige;
     font-family: 'Poppins', sans-serif;
     font-family: 'Inter', sans-serif;
+
+  }
+
+  body{
+    background-color: #B5F1CC;
 
   }
 
