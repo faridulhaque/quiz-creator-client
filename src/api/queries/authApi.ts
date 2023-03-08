@@ -1,4 +1,4 @@
-import { regInfoType } from "../../types/frontendTypes";
+import { regInfoType } from "../../types/componentTypes";
 import { apiSlice } from "../rooApi/apiSlice";
 
 

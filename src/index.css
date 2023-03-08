@@ -9,14 +9,32 @@
 
   }
 
-  body{
+  body {
     background-color: #B5F1CC;
 
   }
 
   ::-webkit-scrollbar {
     display: none;
+  }
+
+  /* making animation for modal */
+  .modal-motion {
+    animation: modal-motion 0.5s;
+  }
+
+  @keyframes modal-motion {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
     }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
 
   @tailwind base;
   @tailwind components;

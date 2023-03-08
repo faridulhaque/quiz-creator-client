@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../../api/queries/authApi";
-import { authType, loginInfoType } from "../../types/frontendTypes";
+import { authType, loginInfoType } from "../../types/componentTypes";
 import Loading from "../shared/Loading";
 
 const Login = ({ setLogin }: authType) => {

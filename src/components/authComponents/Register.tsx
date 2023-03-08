@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { authType, regInfoType } from "../../types/frontendTypes";
+import { authType, regInfoType } from "../../types/componentTypes";
 import { useRegisterMutation } from "../../api/queries/authApi";
 import Loading from "../shared/Loading";
 

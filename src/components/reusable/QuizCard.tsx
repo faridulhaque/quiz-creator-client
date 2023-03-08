@@ -8,7 +8,7 @@ const QuizCard = () => {
           "0px -1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 2px 0px rgba(0, 0, 0, 0.2)",
         paddingTop: "5px",
       }}
-      className="w-[96%] mx-auto shadow-md rounded-md h-[150px] mt-5 cursor-pointer"
+      className="w-[96%] mx-auto shadow-md rounded-md h-[150px] mt-5 cursor-pointer hover:border-[1px] border-[#539165]"
     >
       <p
         className="text-center
