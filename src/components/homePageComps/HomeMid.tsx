@@ -10,7 +10,7 @@ const HomeMid = ({
   quizCreatorModal: boolean;
 }) => {
   return (
-    <div className="relative w-[35%] h-[975px] overflow-y-scroll mt-[100px] bg-white rounded-md shadow-lg border-[#539165] border-y-4">
+    <div className="relative w-[40%] h-[975px] overflow-y-scroll mt-[100px] bg-white rounded-md shadow-lg border-[#539165] border-y-4">
       <div className="w-full h-20 flex items-center justify-between">
         <p className="ml-3 text-xl text-[#539165]">Quiz by you</p>
         <button
