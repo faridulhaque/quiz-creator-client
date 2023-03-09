@@ -1,6 +1,7 @@
 import React from "react";
 
-const QuizCard = () => {
+const QuizCard = ({quizPaper}:any) => {
+ const {questions, duration, status, attendance, title} = quizPaper
   return (
     <div
       style={{
@@ -14,24 +15,24 @@ const QuizCard = () => {
         className="text-center
     text-3xl text-gray-500 mt-[10px] mb-5"
       >
-        Title
+        {title}
       </p>
       <div className="w-full flex items-center justify-around">
         <p className="text-sm text-gray-500 flex items-center flex-col">
           <span className="text-lg">Questions</span>
-          <span className="text-sm mt-1">0</span>
+          <span className="text-sm mt-1">{questions?.length}</span>
         </p>
         <p className="text-sm text-gray-500 flex items-center flex-col">
           <span className="text-lg">Status</span>
-          <span className="text-sm mt-1">incomplete</span>
+          <span className="text-sm mt-1">{status ? "Complete" : "Incomplete"}</span>
         </p>
         <p className="text-sm text-gray-500 flex items-center flex-col">
           <span className="text-lg">Attendance</span>
-          <span className="text-sm mt-1">0</span>
+          <span className="text-sm mt-1">{attendance?.length}</span>
         </p>
         <p className="text-sm text-gray-500 flex items-center flex-col">
           <span className="text-lg">Duration</span>
-          <span className="text-sm mt-1">Unlimited</span>
+          <span className="text-sm mt-1">{duration?.hour}:{duration?.min}:{duration?.sec}</span>
         </p>
       </div>
     </div>

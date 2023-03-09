@@ -1,6 +1,8 @@
+import { useGetQuestionPapersQuery } from "../../api/queries/questionPaperApi";
 import QuizCreatorModal from "../../modals/QuizCreatorModal";
 import QuizCard from "../reusable/QuizCard";
 import SearchBox from "../reusable/SearchBox";
+import Loading from "../shared/Loading";
 
 const HomeMid = ({
   setQuizCreatorModal,
@@ -9,6 +11,14 @@ const HomeMid = ({
   setQuizCreatorModal: (value: boolean) => void;
   quizCreatorModal: boolean;
 }) => {
+
+  let user = JSON.parse(localStorage.getItem("user") || "null");
+  
+  const { isLoading, error, data } = useGetQuestionPapersQuery<any>(user?.email);
+
+
+
+
   return (
     <div className="relative w-[40%] h-[975px] overflow-y-scroll mt-[100px] bg-white rounded-md shadow-lg border-[#539165] border-y-4">
       <div className="w-full h-20 flex items-center justify-between">
@@ -23,7 +33,11 @@ const HomeMid = ({
 
       <SearchBox></SearchBox>
 
-      <QuizCard></QuizCard>
+      {isLoading ? (
+        <Loading></Loading>
+      ) : (
+        data?.data?.map((d: any) => <QuizCard quizPaper={d}></QuizCard>)
+      )}
       {quizCreatorModal && <QuizCreatorModal></QuizCreatorModal>}
     </div>
   );
