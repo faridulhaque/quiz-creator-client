@@ -1,9 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const QuizCard = ({quizPaper}:any) => {
- const {questions, duration, status, attendance, title} = quizPaper
+const QuizCard = ({ quizPaper }: any) => {
+  const { questions, duration, status, attendance, title, _id } = quizPaper;
+
+  const navigate = useNavigate();
   return (
     <div
+      onClick={() => navigate(`/question_paper/${_id}`)}
       style={{
         boxShadow:
           "0px -1px 2px 0px rgba(0, 0, 0, 0.2), 0px 1px 2px 0px rgba(0, 0, 0, 0.2)",
@@ -24,7 +28,9 @@ const QuizCard = ({quizPaper}:any) => {
         </p>
         <p className="text-sm text-gray-500 flex items-center flex-col">
           <span className="text-lg">Status</span>
-          <span className="text-sm mt-1">{status ? "Complete" : "Incomplete"}</span>
+          <span className="text-sm mt-1">
+            {status ? "Complete" : "Incomplete"}
+          </span>
         </p>
         <p className="text-sm text-gray-500 flex items-center flex-col">
           <span className="text-lg">Attendance</span>
@@ -32,7 +38,9 @@ const QuizCard = ({quizPaper}:any) => {
         </p>
         <p className="text-sm text-gray-500 flex items-center flex-col">
           <span className="text-lg">Duration</span>
-          <span className="text-sm mt-1">{duration?.hour}:{duration?.min}:{duration?.sec}</span>
+          <span className="text-sm mt-1">
+            {duration?.hour}:{duration?.min}:{duration?.sec}
+          </span>
         </p>
       </div>
     </div>
